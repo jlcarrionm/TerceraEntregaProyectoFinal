@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/usuario';
 import { LoginService } from '../../services/login.service';
@@ -19,10 +19,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = new FormGroup({
-      usuario: new FormControl(),
+    //  usuario: new FormControl(),
+      usuario: new FormControl('', [Validators.required]),
       contrasena: new FormControl(),
       esAdmin: new FormControl(false)
     });
+
+
   }
 
   login(){

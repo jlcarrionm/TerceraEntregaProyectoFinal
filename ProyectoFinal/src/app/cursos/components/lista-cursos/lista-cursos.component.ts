@@ -9,7 +9,7 @@ import { CursoService } from '../../services/cursos.service';
   templateUrl: './lista-cursos.component.html',
   styleUrls: ['./lista-cursos.component.css']
 })
-export class ListaCursosComponent implements OnInit, OnDestroy{
+export class ListaCursosComponent implements OnInit{
   cursos!: Cursos[];
   cursos$!: Observable<Cursos[]>;
   suscripcion!: Subscription;
@@ -99,11 +99,11 @@ export class ListaCursosComponent implements OnInit, OnDestroy{
 
    }
 
-  ngOnDestroy(): void{
+/*   ngOnDestroy(): void{
 
     this.suscripcion.unsubscribe();
     this.destroy$.next({});
     this.destroy$.complete();
 
-  }
+  } */
 }

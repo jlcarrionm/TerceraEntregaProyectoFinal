@@ -1,13 +1,21 @@
 import { TestBed } from '@angular/core/testing';
-
-import { CursosService } from './cursos.service';
+import { CursoService } from './cursos.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CursosService', () => {
-  let service: CursosService;
+  let service: CursoService;
+  let httpClientSpy: { get: jasmine.Spy }
+
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CursosService);
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule
+      ],
+      providers:[CursoService]
+    });
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
+    service = TestBed.inject(CursoService);
   });
 
   it('should be created', () => {

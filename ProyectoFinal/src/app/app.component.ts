@@ -10,6 +10,7 @@ import { Sesion } from './models/sesion';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'ProyectoFinal';
   mobileQuery: MediaQueryList;
 
 

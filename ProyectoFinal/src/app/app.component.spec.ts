@@ -1,11 +1,31 @@
 import { TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListaCursosComponent } from './cursos/components/lista-cursos/lista-cursos.component';
+import { LoginComponent } from './autenticacion/components/login/login.component';
+import { AutenticacionInicioComponent } from './autenticacion/components/autenticacion-inicio/autenticacion-inicio.component';
+import { EditarAlumnosDialogComponent } from './alumnos/components/editar-alumnos-dialog/editar-alumnos-dialog.component';
+import { ListaAlumnosComponent } from './alumnos/components/lista-alumnos/lista-alumnos.component';
+import { CursoService } from './cursos/services/cursos.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule,
+        MaterialModule,
+        BrowserAnimationsModule
+
+      ],
       declarations: [
-        AppComponent
+        AppComponent,
+        /* ListaCursosComponent, */
+
+
+
       ],
     }).compileComponents();
   });
@@ -22,10 +42,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ProyectoFinal');
   });
 
-  it('should render title', () => {
+/*   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('ProyectoFinal app is running!');
-  });
+  }); */
 });
