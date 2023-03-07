@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from 'src/app/material.module';
 
@@ -49,4 +50,6 @@ describe('Pruebas unitarias de login-component', () => {
 
     expect(usuario.valid).toBeTrue();
   });
+
+
 });
